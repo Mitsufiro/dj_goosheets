@@ -43,8 +43,8 @@
 - chmod +x app/entrypoint.sh
 
 Проверьте все снова:
-Пересоберем заново образы
-Запустим контейнеры
+Пересоберем заново образы->
+Запустим контейнеры->
 Перейдем на страницу http://localhost:8000/
 
 ![alt text](https://github.com/Mitsufiro/dj_goosheets/blob/master/google_sheets.png)
