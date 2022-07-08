@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead class="table-dark">
+    <th>№</th>
+    <th>Заказ №</th>
+    <th>Стоимость,$</th>
+    <th>Срок поставки</th>
+    <th>Стоимость в рублях</th>
+    </thead>
+    <tbody class="table-group-divider">
+    {% for curr in currency %}
+
+    <tr>
+        <td>{{ curr.num_of_row }}</td>
+        <td>{{ curr.id_of_items }}</td>
+        <td>{{ curr.price }}</td>
+        <td>{{ curr.delivery_time }}</td>
+        <td>{{ curr.price_rub }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!--<table>-->
+<!--    <div class="row">-->
+<!--        {% for curr in currency %}-->
+
+<!--        <tr>-->
+<!--            <td>{{ curr.num_of_row }}</td>-->
+<!--            <td>{{ curr.id_of_item }}</td>-->
+<!--            <td>{{ curr.price }}</td>-->
+<!--            <td>{{ curr.delivery_time }}</td>-->
+<!--            <td>{{ curr.price_rub }}</td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</table>-->
+</body>
+</html>
