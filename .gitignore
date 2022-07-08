@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 creds.json
+.idea
