@@ -17,7 +17,27 @@
 - docker-compose exec web python manage.py migrate --noinput
 
 Убедимся, что все таблицы Django по умолчанию были созданы:
-$ docker-compose exec db psql --username=django_user --dbname=django_db
+- docker-compose exec db psql --username=django_user --dbname=django_db
+
+Вы также можете проверить, что том (volume) был создан, запустив команду:
+- docker volume inspect django-on-docker_postgres_data
+Вы должны увидеть что-то похожее на:
+
+[
+    {
+        "CreatedAt": "2020-06-13T18:43:56Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.project": "dj_docker",
+            "com.docker.compose.version": "1.25.4",
+            "com.docker.compose.volume": "postgres_data"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/django-on-docker_postgres_data/_data",
+        "Name": "dj_docker_postgres_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
 
 Обновим локальные права доступа к файлу:
 - chmod +x app/entrypoint.sh
