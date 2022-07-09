@@ -23,7 +23,7 @@
 - `docker volume inspect django-on-docker_postgres_data`
 Вы должны увидеть что-то похожее на:
 
-[
+```[
     {
         "CreatedAt": "2020-06-13T18:43:56Z",
         "Driver": "local",
@@ -38,6 +38,7 @@
         "Scope": "local"
     }
 ]
+```
 
 Обновим локальные права доступа к файлу:
 - `chmod +x app/entrypoint.sh`
