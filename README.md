@@ -3,24 +3,24 @@
 Данные поступают из документа Google Sheets при помощи Google API, добавляются в БД в том же виде что и в источнике с добавлением колонки "Стоимость в рублях". Получите google API в json файле и положите в папку app c названием 'creds.json'
 Создайте env в дирректории app: python3.9 -m venv env
 Активируйте: source env/bin/activate
-Установите django: pip install django
-- python manage.py makemigrations
-- python manage.py migrate
+Установите django: `pip install django`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
 
 Создаем образ:
-- docker build .
+- `docker build .`
 
 Соберем новый образ и запустим два контейнера:
-- docker-compose up -d --build
+- `docker-compose up -d --build`
 
 Запустим миграцию:
-- docker-compose exec web python manage.py migrate --noinput
+- `docker-compose exec web python manage.py migrate --noinput`
 
 Убедимся, что все таблицы Django по умолчанию были созданы:
-- docker-compose exec db psql --username=django_user --dbname=django_db
+- `docker-compose exec db psql --username=django_user --dbname=django_db`
 
 Вы также можете проверить, что том (volume) был создан, запустив команду:
-- docker volume inspect django-on-docker_postgres_data
+- `docker volume inspect django-on-docker_postgres_data`
 Вы должны увидеть что-то похожее на:
 
 [
@@ -40,7 +40,7 @@
 ]
 
 Обновим локальные права доступа к файлу:
-- chmod +x app/entrypoint.sh
+- `chmod +x app/entrypoint.sh`
 
 Проверьте все снова:
 Пересоберем заново образы->
